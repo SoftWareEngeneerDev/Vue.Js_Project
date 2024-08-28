@@ -25,6 +25,14 @@
         <h2>Compteur:{{ compteur }}</h2>
         <canvas v-on:mousemove="coords"></canvas>
         <p>{{ x }}/{{ y }}</p>
+        <div v-on:click="foo">
+            <p>Lorem Ipsum
+                <!--  v-on:click.once: autorise un seul evenement et après le click rien ne se reproduit-->
+                <!--  v-on:click.stop: stop la propagation d'un evennemet produit par un ele enfant vers ses parent-->
+                <!--  v-on:click.prevent: stop la propagation d'un evennemet par defaut d'un formulaire par exemple-->
+                <button v-on:click.stop="foo">click moi</button>
+            </p>
+        </div>
     </div>
     <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -39,6 +47,9 @@
                 y: 0
             },
             methods: {
+                foo: function() {
+                    console.log('cliké');
+                },
                 augmente: function() {
                     return this.compteur++;
                 },
