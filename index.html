@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vue.Js PlayBack</title>
+</head>
+
+<body>
+
+    <div id="mon-app">
+        <h1> Vue Js cours --- HELLO WORLD</h1>
+        <p>{{ txt }}</p>
+        <p>{{ presentation() }}</p>
+        <a v-bind:href="UrlVueJs">Le site de Vue Js</a>
+    </div>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#mon-app',
+            data: {
+                txt: 'Hello world',
+                nb1: '1O',
+                nb2: '20',
+                UrlVueJs: 'https://vuejs.org/guide/introduction.html'
+            },
+            methods: {
+                presentation: function() {
+                    return 'Je me nommme KAGAMBEGA Boukary et je dis ' + this.txt +
+                        'à Emille' + (this.nb1 + this.nb2)
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

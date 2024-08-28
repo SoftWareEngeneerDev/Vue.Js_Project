@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vue.Js PlayBack</title>
+</head>
+
+<body>
+
+    <div id="mon-app">
+        <h1> Vue Js cours --- HELLO WORLD</h1>
+
+        <button v-on:click="compteur++">Augmente</button>
+        <button v-on:click="compteur--">baisse</button>
+        <h2>Compteur:{{ compteur }}</h2>
+    </div>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#mon-app',
+            data: {
+                txt: 'Hello world',
+                compteur: 0,
+                UrlVueJs: 'https://vuejs.org/guide/introduction.html'
+            },
+            methods: {
+                /*augmente: function() {
+
+                },
+                baisse: function() {
+
+                }*/
+
+            }
+        })
+    </script>
+</body>
+
+</html>
